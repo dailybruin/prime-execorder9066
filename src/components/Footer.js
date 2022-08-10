@@ -23,7 +23,7 @@ const Container = styled.div`
 `
 
 const Socials = styled.div`
-    position: relative;
+  position: relative;
 	margin-top: 20px;
   
 	img {
