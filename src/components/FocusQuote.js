@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto;
   align-items: center;
   width: 75%;
   margin: 140px auto 140px auto;
 `
 
-const Quote = styled.div`
+const Quote = styled.q`
   font-weight: 200;
-  font-size: 64px;
+  font-size: 60px;
   line-height: 79px;
   text-align: center;
   padding-bottom: 35px;

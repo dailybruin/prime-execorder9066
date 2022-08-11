@@ -9,9 +9,9 @@ import { mediaQueries } from '../shared/config';
 
 
 const Container = styled.div`
-	background-color: black;
+	background-color: #eeeed9;
 	height: auto;
-	color: white;
+	color: black;
 	padding: 60px 0 10px 0;
     text-align: center;
 	h1 {

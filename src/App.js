@@ -11,7 +11,7 @@ import LandingPic from './images/japan_declares_war.jpg';
 import NewspaperPic from './images/edict.svg';
 
 function App() {
-  const [ data, setData ] = useState(null);
+  const [data, setData] = useState(null);
   
   useEffect(() => {
     fetch(
@@ -21,16 +21,16 @@ function App() {
       .then((res) => setData(res.data["article.aml"]));
   }, []);
 
-  return (
+  console.log("DATA")
+  data && console.log(data)
+
+  return data && (
     <div className="App">
       <Header/>
         {/* {data && <Landing landing_image={LandingPic}/> } */}
-        <Landing landing_image={LandingPic}/>
-        <FocusQuote quote=
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        />
-        <ImageQuote left_image={NewspaperPic} quote = "this is quote 2 this is quote 2 this is quote 2 this is quote 2" />
+        {data && <Landing landing_image={LandingPic}/>}
+        {data && <FocusQuote quote={data.quote_1}/>}
+        {data && <ImageQuote left_image={NewspaperPic} quote={data.quote_2} />}
       <Footer/>
     </div>
   );
