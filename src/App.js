@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Landing from './components/Landing';
 import FocusQuote from "./components/FocusQuote";
 import ImageQuote from "./components/ImageQuote";
+import FocusWord from "./components/FocusWord";
 import Article from "./components/Article"
 
 import LandingPic from './images/japan_declares_war.jpg';
@@ -28,10 +29,10 @@ function App() {
   return data && (
     <div className="App">
       <Header/>
-        {/* {data && <Landing landing_image={LandingPic}/> } */}
         {data && <Landing landing_image={LandingPic}/>}
         {data && <FocusQuote quote={data.quote_1}/>}
         {data && <ImageQuote left_image={NewspaperPic} quote={data.quote_2} />}
+        {data && <FocusWord word={data.word} phrase={data.phrase} /> }
         {data && <Article main={data.content} />}
       <Footer/>
     </div>

@@ -33,4 +33,4 @@ export default function FocusQuote(props) {
         <Line/>
       </Container>
     );
-  }
+}
