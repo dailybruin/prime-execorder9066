@@ -29,8 +29,7 @@ const Quote = styled.q`
 
 const Line = styled.hr`
     width: 50%;
-    margin-right: auto;
-    margin-left: auto;
+    text-align: center;
     height: 1px;
     background: black;
 `
