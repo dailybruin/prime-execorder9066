@@ -3,20 +3,15 @@ import styled from "styled-components";
 import { mediaQueries } from "../shared/config";
 
 const Container = styled.div`
-  margin: 8% auto 10% auto;
-  width: 85%;
+  margin: 8% auto;
   height: fit-content;
   text-align: left;
-`;
-
-
-const Content = styled.div`
   font-weight: 200;
   font-size: 20px;
   line-height: 24px;
-  margin: auto;
+  width: 85%;
+  position: relative;
 `;
-
 
 const PullQuote = styled.aside`
   float: left;
@@ -26,52 +21,75 @@ const PullQuote = styled.aside`
   text-align: center;
   padding: 20px;
 
-  q {
+  p {
     margin: 0;
-    /* color: red; */
   }
+`;
+
+const Figure = styled.div`
+  margin: 2% -50vw 2% -50vw;
+  left: 50%;
+  width: 100vw;
+  position: relative;
+  
+  img {
+    width: 100%;
+  }
+`;
+
+const Info = styled.div`
+  font-style: italic;
+  font-size: 16px;
+  margin-left: 1%;
 `;
 
 
 export default function Article(props) {
     return (
       <Container>
-        <Content style={{ margin: "auto" }}>
-            {props.main.map((info) => {
-                if (info.type == "header")
-                {
-                  return (
-                    <div>
-                      <h2 style={{ "font-size": "64px" }}> {info.value.article_title} </h2>
-                      <div style={{"font-size": "24px", "line-height": "60px"}}> {info.value.article_byline} </div>
-                      <div style={{"font-size": "24px", "line-height": "60px", "margin-bottom": "30px"}}> 
-                        {info.value.article_date} 
-                      </div>
+          {props.main.map((info) => {
+              if (info.type == "header")
+              {
+                return (
+                  <div>
+                    <h2 style={{ "font-size": "64px" }}> {info.value.article_title} </h2>
+                    <div style={{"font-size": "24px", "line-height": "3rem"}}> {info.value.article_byline} </div>
+                    <div style={{"font-size": "24px", "line-height": "3rem", "margin-bottom": "30px"}}> 
+                      {info.value.article_date} 
                     </div>
-                  )
-                } else if (info.type == "text") {
-                  return <p>{info.value}</p>;
-                } else if (info.type == "pull") {
-                    if (info.value.float == "left")
-                      return (
-                      <PullQuote style={{ "float": "left"}}>
-                        <q> {info.value.caption} </q>
+                  </div>
+                )
+              } else if (info.type == "text") {
+                return <p>{info.value}</p>;
+              } else if (info.type == "pull") {
+                  if (info.value.float == "left")
+                    return (
+                    <PullQuote style={{ "float": "left"}}>
+                      <p> {info.value.caption} </p>
+                    </PullQuote>
+                    )
+                  else if (info.value.float == "right")
+                    return (
+                      <PullQuote style={{ "float": "right" }}>
+                        <p> {info.value.caption} </p>
                       </PullQuote>
-                      )
-                    else if (info.value.float == "right")
-                      return (
-                        <PullQuote style={{ "float": "right" }}>
-                          <q> {info.value.caption} </q>
-                        </PullQuote>
-                      )
-                }
-                else if (info.type == "image") {
-                  return (
-                    <img src = {info.value.url} style={{ "width": "100vw" }}/>
-                  )
-                }
-            })}
-        </Content>
+                    )
+              }
+              else if (info.type == "image") {
+                return (
+                  <Figure>
+                    <img src = {info.value.url}/>
+                    <Info>{info.value.credit}</Info>
+                    <Info>{info.value.caption}</Info>
+                  </Figure>
+                )
+              }
+              else if (info.type == "divider") {
+                return (
+                  <hr style={{"margin": "40px auto", "width": "100%"}}/>
+                )
+              }
+          })}
       </Container>
     );
 }

@@ -6,31 +6,26 @@ import Barracks from "../images/barracks.svg"
 const Container = styled.div`
     text-align: center;
     width: 100%;
-    height: 1100px;
+    height: 100vh;
     background-image: url(${Barracks});
     background-position: bottom;
     background-repeat: no-repeat;
     margin-top: 5%;
 `
 
-const Word = styled.div `
-    font-size: 300px;
-    font-style: italic;
-    text-transform: uppercase;
-`
-
-const Phrase = styled.div`
+const Quote = styled.div`
   font-weight: 200;
   font-size: 60px;
   line-height: 79px;
-  margin: 1% 5% auto 5%;
+  padding-top: 5%;
+  text-align: center;
 `
+
 
 export default function FocusWord(props) {
     return (
       <Container>
-        <Word>{props.word}</Word>
-        <Phrase>{props.phrase}</Phrase>
+        <Quote>{props.phrase}</Quote>
       </Container>
     );
 }

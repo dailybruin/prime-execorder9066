@@ -11,23 +11,21 @@ const Container = styled.div`
 const Illo = styled.img`
   width: 100vw;
   height: auto;
+  margin-bottom: 1rem;
 `;
 
-// const Credits = styled.div`
-//   font-family: "Courier Prime", monospace;
-//   font-size: 14px;
-//   font-weight: 700;
-//   color: #7e7b67;
-//   position: absolute;
-//   bottom: 0;
-//   right: 10px;
-//   padding-bottom: 15px;
-// `;
+const Credits = styled.div`
+  font-style: italic;
+  font-size: 16px;
+  margin-left: 1%;
+  text-align: left;
+`;
 
 export default function Landing(props) {
   return (
     <Container>
-      <Illo src={props.landing_image}></Illo>
+      <Illo src={props.image}></Illo>
+      <Credits>{props.credits}</Credits>
     </Container>
   );
 }

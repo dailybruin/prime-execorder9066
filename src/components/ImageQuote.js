@@ -18,7 +18,7 @@ const RightColumn = styled.div`
     justify-self: center;
 `
 
-const Quote = styled.q`
+const Quote = styled.div`
     width: 100%;
     font-weight: 200;
     font-size: 60px;

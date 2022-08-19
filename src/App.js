@@ -7,10 +7,7 @@ import Landing from './components/Landing';
 import FocusQuote from "./components/FocusQuote";
 import ImageQuote from "./components/ImageQuote";
 import FocusWord from "./components/FocusWord";
-import Article from "./components/Article"
-
-import LandingPic from './images/japan_declares_war.jpg';
-import NewspaperPic from './images/edict.svg';
+import Article from "./components/Article";
 
 function App() {
   const [data, setData] = useState(null);
@@ -29,9 +26,9 @@ function App() {
   return data && (
     <div className="App">
       <Header/>
-        {data && <Landing landing_image={LandingPic}/>}
+        {data && <Landing image={data.landing_image} credits={data.landing_credits}/>} 
         {data && <FocusQuote quote={data.quote_1}/>}
-        {data && <ImageQuote left_image={NewspaperPic} quote={data.quote_2} />}
+        {data && <ImageQuote left_image={data.image_with_quote} quote={data.quote_2} />}
         {data && <FocusWord word={data.word} phrase={data.phrase} /> }
         {data && <Article main={data.content} />}
       <Footer/>

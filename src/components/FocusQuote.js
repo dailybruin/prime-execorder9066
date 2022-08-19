@@ -7,10 +7,10 @@ const Container = styled.div`
   grid-template-rows: auto auto;
   align-items: center;
   width: 75%;
-  margin: 140px auto 140px auto;
+  margin: 10% auto 10% auto;
 `
 
-const Quote = styled.q`
+const Quote = styled.div`
   font-weight: 200;
   font-size: 60px;
   line-height: 79px;
