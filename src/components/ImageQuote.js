@@ -7,24 +7,35 @@ const Container = styled.div`
     grid-template-columns: 45% auto;
     column-gap: 50px;
     align-items: center;
-    width: 100%;
+    width: 100vw;
+    min-height: fit-content;
     box-sizing: border-box;
+
+    ${mediaQueries.mobile} {
+        grid-template-columns: auto;
+    }
 `
 
 const RightColumn = styled.div`
-    width: 80%;
     display: grid;
     grid-template-rows: auto auto;
     justify-self: center;
+    margin-right: 3%;
+
+    ${mediaQueries.mobile} {
+        margin-top: 10%;
+    }
 `
 
 const Quote = styled.div`
-    width: 100%;
     font-weight: 200;
-    font-size: 60px;
-    line-height: 79px;
+    font-size: 3.5vw;
+    line-height: 1.5em;
     text-align: center;
     padding-bottom: 35px;
+    ${mediaQueries.mobile} {
+        font-size: 5vw;
+    }
 `
 
 const Line = styled.hr`

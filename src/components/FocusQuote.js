@@ -13,9 +13,12 @@ const Container = styled.div`
 const Quote = styled.div`
   font-weight: 200;
   font-size: 60px;
-  line-height: 79px;
+  line-height: 1.5em;
   text-align: center;
   padding-bottom: 35px;
+  ${mediaQueries.mobile} {
+    font-size: 5vw;
+  }
 `
 
 const Line = styled.hr`

@@ -11,7 +11,18 @@ const Container = styled.div`
   line-height: 24px;
   width: 85%;
   position: relative;
+
+  h2 {
+    font-size: 64px;
+    line-height: 1.5em;
+    margin: 0;
+  }
 `;
+
+const ArticleInfo = styled.div`
+  font-size: 24px;
+  line-height: 1.5em;
+`
 
 const PullQuote = styled.aside`
   float: left;
@@ -25,7 +36,6 @@ const PullQuote = styled.aside`
     margin: 0;
     font-weight: 700;
     font-family: 'Barlow', sans-serif;
-
   }
 `;
 
@@ -44,6 +54,10 @@ const Info = styled.div`
   font-style: italic;
   font-size: 16px;
   margin-left: 1%;
+  ${mediaQueries.mobile} {
+    font-size: 12px;
+    line-height: 1em;
+  }
 `;
 
 
@@ -54,12 +68,10 @@ export default function Article(props) {
               if (info.type == "header")
               {
                 return (
-                  <div>
-                    <h2 style={{ "font-size": "64px" }}> {info.value.article_title} </h2>
-                    <div style={{"font-size": "24px", "line-height": "3rem"}}> {info.value.article_byline} </div>
-                    <div style={{"font-size": "24px", "line-height": "3rem", "margin-bottom": "30px"}}> 
-                      {info.value.article_date} 
-                    </div>
+                  <div style={{"margin-bottom": "3%"}}>
+                    <h2> {info.value.article_title} </h2>
+                    <ArticleInfo> {info.value.article_byline} </ArticleInfo>
+                    <ArticleInfo> {info.value.article_date} </ArticleInfo>
                   </div>
                 )
               } else if (info.type == "text") {
@@ -67,13 +79,13 @@ export default function Article(props) {
               } else if (info.type == "pull") {
                   if (info.value.float == "left")
                     return (
-                    <PullQuote style={{ "float": "left", "margin-left": "-100px" }}>
+                    <PullQuote style={{ "float": "left", "margin-left": "-5vw" }}>
                       <p> {info.value.caption} </p>
                     </PullQuote>
                     )
                   else if (info.value.float == "right")
                     return (
-                      <PullQuote style={{ "float": "right", "margin-right": "-100px" }}>
+                      <PullQuote style={{ "float": "right", "margin-right": "-5vw" }}>
                         <p> {info.value.caption} </p>
                       </PullQuote>
                     )
