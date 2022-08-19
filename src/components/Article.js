@@ -23,11 +23,14 @@ const PullQuote = styled.aside`
 
   p {
     margin: 0;
+    font-weight: 700;
+    font-family: 'Barlow', sans-serif;
+
   }
 `;
 
 const Figure = styled.div`
-  margin: 2% -50vw 2% -50vw;
+  margin: 5% -50vw 5% -50vw;
   left: 50%;
   width: 100vw;
   position: relative;
@@ -64,13 +67,13 @@ export default function Article(props) {
               } else if (info.type == "pull") {
                   if (info.value.float == "left")
                     return (
-                    <PullQuote style={{ "float": "left"}}>
+                    <PullQuote style={{ "float": "left", "margin-left": "-100px" }}>
                       <p> {info.value.caption} </p>
                     </PullQuote>
                     )
                   else if (info.value.float == "right")
                     return (
-                      <PullQuote style={{ "float": "right" }}>
+                      <PullQuote style={{ "float": "right", "margin-right": "-100px" }}>
                         <p> {info.value.caption} </p>
                       </PullQuote>
                     )
