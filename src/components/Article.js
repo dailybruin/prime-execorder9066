@@ -68,7 +68,7 @@ export default function Article(props) {
               if (info.type == "header")
               {
                 return (
-                  <div style={{"margin-bottom": "3%"}}>
+                  <div style={{"marginBottom": "3%"}}>
                     <h2> {info.value.article_title} </h2>
                     <ArticleInfo> {info.value.article_byline} </ArticleInfo>
                     <ArticleInfo> {info.value.article_date} </ArticleInfo>
@@ -79,13 +79,13 @@ export default function Article(props) {
               } else if (info.type == "pull") {
                   if (info.value.float == "left")
                     return (
-                    <PullQuote style={{ "float": "left", "margin-left": "-5vw" }}>
+                    <PullQuote style={{ "float": "left", "marginLeft": "-5vw" }}>
                       <p> {info.value.caption} </p>
                     </PullQuote>
                     )
                   else if (info.value.float == "right")
                     return (
-                      <PullQuote style={{ "float": "right", "margin-right": "-5vw" }}>
+                      <PullQuote style={{ "float": "right", "marginRight": "-5vw" }}>
                         <p> {info.value.caption} </p>
                       </PullQuote>
                     )

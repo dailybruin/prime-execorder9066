@@ -19,7 +19,7 @@ const Container = styled.div`
     }
 `
 
-const Quote = styled.div`
+const Phrase = styled.div`
   font-size: 60px;
   line-height: 1.5em;
   padding-top: 5%;
@@ -31,10 +31,10 @@ const Quote = styled.div`
 `
 
 
-export default function FocusWord(props) {
+export default function Explainer(props) {
     return (
       <Container>
-        <Quote>{props.phrase}</Quote>
+        <Phrase>{props.explainer}</Phrase>
       </Container>
     );
 }

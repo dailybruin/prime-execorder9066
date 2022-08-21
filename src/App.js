@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Landing from './components/Landing';
 import FocusQuote from "./components/FocusQuote";
 import ImageQuote from "./components/ImageQuote";
-import FocusWord from "./components/FocusWord";
+import FocusWord from "./components/Explainer";
 import Article from "./components/Article";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         {data && <Landing image={data.landing_image} credits={data.landing_credits}/>} 
         {data && <FocusQuote quote={data.quote_1}/>}
         {data && <ImageQuote left_image={data.image_with_quote} quote={data.quote_2} />}
-        {data && <FocusWord word={data.word} phrase={data.phrase} /> }
+        {data && <FocusWord explainer={data.explainer} /> }
         {data && <Article main={data.content} />}
       <Footer/>
     </div>

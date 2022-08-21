@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-
 import DBLogo from '../images/DailyBruinLogo.svg'
 import { colors } from '../shared/config'
 
@@ -20,7 +19,6 @@ const DBHeader = styled("div")`
   text-transform: uppercase;
   font-size: 18px;
   line-height: 21.6px;
-  /* border-bottom: 2px solid black; */
 `;
 
 const Header = () => {
