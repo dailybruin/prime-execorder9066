@@ -46,7 +46,7 @@ const Figure = styled.div`
   position: relative;
   
   img {
-    width: 100%;
+    width: 100vw;
   }
 `;
 
@@ -94,7 +94,6 @@ export default function Article(props) {
                 return (
                   <Figure>
                     <img src = {info.value.url}/>
-                    <Info>{info.value.credit}</Info>
                     <Info>{info.value.caption}</Info>
                   </Figure>
                 )

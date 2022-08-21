@@ -19,7 +19,6 @@ const Container = styled.div`
 		font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
 	}
-  /* margin-bottom: 20px; */
 `
 
 const Socials = styled.div`

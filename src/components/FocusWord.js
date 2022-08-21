@@ -11,6 +11,7 @@ const Container = styled.div`
     background-image: url(${Barracks});
     background-position: bottom;
     background-repeat: no-repeat;
+    background-size: cover;
     margin-top: 5%;
 
     ${mediaQueries.mobile} {
